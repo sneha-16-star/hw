@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class with Static Method</title>
+</head>
+<body>
+  <script>
+    // Parent class
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      // Normal method
+      introduce() {
+        return `Hi, I'm ${this.name} and I'm ${this.age} years old.`;
+      }
+
+      // Static method (belongs to the class, not objects)
+      static species() {
+        return "Homo sapiens";
+      }
+    }
+
+    // Child class (inherits Person)
+    class Student extends Person {
+      constructor(name, age, grade) {
+        super(name, age); // call parent constructor
+        this.grade = grade;
+      }
+
+      // New method
+      study() {
+        return `${this.name} is studying in grade ${this.grade}.`;
+      }
+    }
+
+    // Create an object of Student
+    let student1 = new Student("Fariha", 16, 9);
+
+    // Access normal methods
+    console.log(student1.introduce());  // Hi, I'm Fariha and I'm 16 years old.
+    console.log(student1.study());      // Fariha is studying in grade 9.
+
+    // Access static method (via class, not object)
+    console.log(Person.species());      // Homo sapiens
+    console.log(Student.species());     // Inherited: Homo sapiens
+  </script>
+</body>
+</html>
