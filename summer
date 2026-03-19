@@ -1,0 +1,5 @@
+temperature = int(input("Enter the temperature in your city"))
+if  temperature>20:
+    print("it is summer")
+else:
+    print("It is winter")
