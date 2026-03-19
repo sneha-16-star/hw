@@ -1,0 +1,8 @@
+def dueBill():
+    bill_amount = int(input("enter the bill amount"))
+    amount_paid = int(input("enter the amount paid"))
+
+    result =bill_amount - amount_paid
+
+    print("the due amount is" ,result)
+dueBill()    
