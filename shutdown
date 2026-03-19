@@ -1,0 +1,5 @@
+result = input("do u wanna shutdown")
+if result == "yes":
+    print("shuting down")
+else:
+    print("not shuting down")
