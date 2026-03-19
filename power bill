@@ -1,0 +1,5 @@
+n = int(input("enter a number"))
+p = int(input("enter the power"))
+
+result = n**p
+print(result)
