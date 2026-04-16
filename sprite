@@ -1,0 +1,43 @@
+import pygame
+
+pygame.init()
+
+screen = pygame.display.set_mode((600, 400))
+clock = pygame.time.Clock()
+
+# Colors
+color1 = (0, 255, 0)
+color2 = (255, 0, 0)
+current_color = color1
+
+# Two sprites
+sprite1 = pygame.Rect(150, 150, 50, 50)
+sprite2 = pygame.Rect(350, 150, 50, 50)
+
+# Custom event
+CHANGE_COLOR = pygame.USEREVENT + 1
+pygame.time.set_timer(CHANGE_COLOR, 1000)  # every 1 second
+
+running = True
+while running:
+    screen.fill((255, 255, 255))
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+        if event.type == CHANGE_COLOR:
+            # switch color
+            if current_color == color1:
+                current_color = color2
+            else:
+                current_color = color1
+
+    # Draw sprites with changing color
+    pygame.draw.rect(screen, current_color, sprite1)
+    pygame.draw.rect(screen, current_color, sprite2)
+
+    pygame.display.update()
+    clock.tick(60)
+
+pygame.quit()
