@@ -1,0 +1,35 @@
+import pygame
+
+# Initialize pygame
+pygame.init()
+
+# Create screen
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("Game Screen")
+
+# Colors
+white = (255, 255, 255)
+blue = (0, 0, 255)
+
+# Font
+font = pygame.font.Font(None, 50)
+text = font.render("Hello Game!", True, blue)
+
+# Game loop
+running = True
+while running:
+    screen.fill(white)
+
+    # Draw rectangle
+    pygame.draw.rect(screen, blue, (300, 200, 200, 100))
+
+    # Display text
+    screen.blit(text, (280, 350))
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    pygame.display.update()
+
+pygame.quit()
