@@ -1,0 +1,30 @@
+from tkinter import *
+
+# Create window
+root = Tk()
+root.title("Product Calculator")
+
+# Function to calculate product
+def calculate():
+    num1 = int(entry1.get())
+    num2 = int(entry2.get())
+    result = num1 * num2
+    result_label.config(text="Product: " + str(result))
+
+# Input fields
+entry1 = Entry(root)
+entry1.pack()
+
+entry2 = Entry(root)
+entry2.pack()
+
+# Button
+btn = Button(root, text="Calculate Product", command=calculate)
+btn.pack()
+
+# Result label
+result_label = Label(root, text="")
+result_label.pack()
+
+# Run the application
+root.mainloop()
