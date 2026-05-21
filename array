@@ -1,0 +1,11 @@
+import numpy as np
+
+arr = np.arange(10)
+arr_modified = np.where(arr % 2 != 0, -1, arr)
+arr_2d = arr.reshape(2, 5)
+sum_even = sum(x for x in arr if x % 2 == 0)
+
+print(arr)
+print(arr_modified)
+print(arr_2d)
+print(sum_even)
